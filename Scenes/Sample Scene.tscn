@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://dw7u7t482ch6a"]
+
+[ext_resource type="PackedScene" uid="uid://bf150rfxmg2q4" path="res://prefab/box.tscn" id="1_r6ugw"]
+
+[node name="root" type="Node3D" unique_id=15306160]
+
+[node name="Box" parent="." unique_id=816699017 instance=ExtResource("1_r6ugw")]
+transform = Transform3D(12, 0, 0, 0, 1, 0, 0, 0, 12, 0, -0.5, 0)
+
+[node name="Box2" parent="." unique_id=1184131957 instance=ExtResource("1_r6ugw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.7324152, 0.5960008, 1.5776782)
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1774577463]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.0081747, 0.43219495, 2.730451)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=855986746]
+transform = Transform3D(1, 0, 0, 0, 0.15221108, 0.988348, 0, -0.988348, 0.15221108, 0, 3, 0)
