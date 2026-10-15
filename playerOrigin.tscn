@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://byw2olxqohv30"]
+
+[ext_resource type="Script" uid="uid://c0aomkxh7xyhn" path="res://Player.cs" id="1_4flbx"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_hoqms"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_cnxtk"]
+
+[node name="PlayerOrigin3D" type="XROrigin3D" unique_id=1116085961]
+script = ExtResource("1_4flbx")
+
+[node name="CharacterBody3D" type="CharacterBody3D" parent="." unique_id=1763450833]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0511545, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D" unique_id=989513152]
+shape = SubResource("CapsuleShape3D_hoqms")
+
+[node name="XRCamera3D" type="XRCamera3D" parent="." unique_id=1977085119]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7, 0)
+
+[node name="leftHand" type="XRController3D" parent="." unique_id=285320303]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 1, -0.5)
+tracker = &"left_hand"
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="leftHand" unique_id=860577839]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.3, 0, 0, 0)
+mesh = SubResource("BoxMesh_cnxtk")
+
+[node name="rightHand" type="XRController3D" parent="." unique_id=547116338]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 1, -0.5)
+tracker = &"right_hand"
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="rightHand" unique_id=1934651773]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.3, 0, 0, 0)
+mesh = SubResource("BoxMesh_cnxtk")

@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://s24kukksvyms" path="res://Scenes/Root.cs" id="1_6noqq"]
 [ext_resource type="PackedScene" uid="uid://bf150rfxmg2q4" path="res://prefab/box.tscn" id="1_r6ugw"]
-[ext_resource type="PackedScene" uid="uid://byw2olxqohv30" path="res://player.tscn" id="3_vjknt"]
+[ext_resource type="PackedScene" uid="uid://byw2olxqohv30" path="res://playerOrigin.tscn" id="3_vjknt"]
 
 [node name="root" type="Node3D" unique_id=15306160]
 script = ExtResource("1_6noqq")
@@ -16,4 +16,4 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.7324152, 0.5960008, 1.57767
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=855986746]
 transform = Transform3D(1, 0, 0, 0, 0.15221108, 0.988348, 0, -0.988348, 0.15221108, 0, 3, 0)
 
-[node name="XROrigin3D" parent="." unique_id=1116085961 instance=ExtResource("3_vjknt")]
+[node name="PlayerOrigin3D" parent="." unique_id=1116085961 instance=ExtResource("3_vjknt")]

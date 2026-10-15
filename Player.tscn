@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://cd442kwwtulrt"]
+
+[ext_resource type="Script" uid="uid://t1in3osw117v" path="res://PlayerMove.cs" id="1_kpjcp"]
+[ext_resource type="PackedScene" uid="uid://byw2olxqohv30" path="res://playerOrigin.tscn" id="1_xhfnw"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_cnxtk"]
+
+[node name="Player" type="CharacterBody3D" unique_id=644538223]
+script = ExtResource("1_kpjcp")
+
+[node name="PlayerOrigin3D" parent="." unique_id=1116085961 instance=ExtResource("1_xhfnw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.8, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=554927201]
+shape = SubResource("CapsuleShape3D_cnxtk")
