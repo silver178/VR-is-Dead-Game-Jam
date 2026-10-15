@@ -11,7 +11,8 @@ config_version=5
 [application]
 
 config/name="VR is Dead Halloween Jam"
-config/features=PackedStringArray("4.7", "Forward Plus")
+run/main_scene="uid://dw7u7t482ch6a"
+config/features=PackedStringArray("4.7", "C#", "Forward Plus")
 config/icon="res://icon.svg"
 
 [display]
@@ -30,7 +31,10 @@ project/assembly_name="VR is Dead Halloween Jam"
 [rendering]
 
 rendering_device/driver.windows="d3d12"
+renderer/rendering_method="gl_compatibility"
+textures/vram_compression/import_etc2_astc=true
 
 [xr]
 
 openxr/enabled=true
+shaders/enabled=true
