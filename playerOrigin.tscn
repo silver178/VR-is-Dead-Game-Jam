@@ -1,10 +1,13 @@
 [gd_scene format=3 uid="uid://byw2olxqohv30"]
 
 [ext_resource type="Script" uid="uid://c0aomkxh7xyhn" path="res://Player.cs" id="1_4flbx"]
+[ext_resource type="PackedScene" uid="uid://diyu06cw06syv" path="res://addons/godot-xr-tools/player/player_body.tscn" id="2_45v0q"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_hoqms"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_cnxtk"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_cnxtk"]
 
 [node name="PlayerOrigin3D" type="XROrigin3D" unique_id=1116085961]
 script = ExtResource("1_4flbx")
@@ -33,3 +36,8 @@ tracker = &"right_hand"
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="rightHand" unique_id=1934651773]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.3, 0, 0, 0)
 mesh = SubResource("BoxMesh_cnxtk")
+
+[node name="PlayerBody" parent="." unique_id=149527186 instance=ExtResource("2_45v0q")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PlayerBody" unique_id=1695245539]
+shape = SubResource("CapsuleShape3D_cnxtk")

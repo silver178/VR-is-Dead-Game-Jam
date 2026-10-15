@@ -38,4 +38,5 @@ textures/vram_compression/import_etc2_astc=true
 
 openxr/enabled=true
 openxr/default_action_map="uid://cc5anh7yq2bj6"
+openxr/extensions/spatial_entity/enable_plane_tracking=true
 shaders/enabled=true
