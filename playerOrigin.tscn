@@ -1,26 +1,15 @@
 [gd_scene format=3 uid="uid://byw2olxqohv30"]
 
 [ext_resource type="Script" uid="uid://c0aomkxh7xyhn" path="res://Player.cs" id="1_4flbx"]
-[ext_resource type="PackedScene" uid="uid://diyu06cw06syv" path="res://addons/godot-xr-tools/player/player_body.tscn" id="2_45v0q"]
 [ext_resource type="PackedScene" uid="uid://njx823gyk04n" path="res://addons/godot-xr-tools/hands/scenes/highpoly/left_hand.tscn" id="2_gs48l"]
 [ext_resource type="PackedScene" uid="uid://bl2nuu3qhlb5k" path="res://addons/godot-xr-tools/functions/movement_direct.tscn" id="3_0xyf5"]
 [ext_resource type="PackedScene" uid="uid://raeeicvvindd" path="res://addons/godot-xr-tools/hands/scenes/highpoly/right_hand.tscn" id="3_vto2k"]
 [ext_resource type="PackedScene" uid="uid://b6bk2pj8vbj28" path="res://addons/godot-xr-tools/functions/movement_turn.tscn" id="5_0xyf5"]
-
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_hoqms"]
-
-[sub_resource type="BoxMesh" id="BoxMesh_cnxtk"]
-
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_cnxtk"]
+[ext_resource type="PackedScene" uid="uid://diyu06cw06syv" path="res://addons/godot-xr-tools/player/player_body.tscn" id="6_ir0w8"]
+[ext_resource type="Script" uid="uid://ck4yn3hxuobj7" path="res://addons/godot-xr-tools/player/player_body.gd" id="7_w1na8"]
 
 [node name="PlayerOrigin3D" type="XROrigin3D" unique_id=1116085961]
 script = ExtResource("1_4flbx")
-
-[node name="CharacterBody3D" type="CharacterBody3D" parent="." unique_id=1763450833]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0511545, 0)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D" unique_id=989513152]
-shape = SubResource("CapsuleShape3D_hoqms")
 
 [node name="XRCamera3D" type="XRCamera3D" parent="." unique_id=1977085119]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7, 0)
@@ -28,11 +17,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7, 0)
 [node name="leftHand" type="XRController3D" parent="." unique_id=285320303]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 1, -0.5)
 tracker = &"left_hand"
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="leftHand" unique_id=860577839]
-transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.3, 0, 0, 0)
-visible = false
-mesh = SubResource("BoxMesh_cnxtk")
 
 [node name="LeftHand" parent="leftHand" unique_id=1293984983 instance=ExtResource("2_gs48l")]
 transform = Transform3D(0.9950942, 0.08516806, -0.050337784, -0.082763255, 0.99540913, 0.048071627, 0.054200873, -0.043669667, 0.9975747, 0, 0, 0)
@@ -43,16 +27,13 @@ transform = Transform3D(0.9950942, 0.08516806, -0.050337784, -0.082763255, 0.995
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 1, -0.5)
 tracker = &"right_hand"
 
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="rightHand" unique_id=1934651773]
-transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.3, 0, 0, 0)
-visible = false
-mesh = SubResource("BoxMesh_cnxtk")
-
 [node name="RightHand" parent="rightHand" unique_id=114749685 instance=ExtResource("3_vto2k")]
 
 [node name="MovementTurn" parent="rightHand" unique_id=1313240587 instance=ExtResource("5_0xyf5")]
 
-[node name="PlayerBody" parent="." unique_id=149527186 instance=ExtResource("2_45v0q")]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="PlayerBody" unique_id=1695245539]
-shape = SubResource("CapsuleShape3D_cnxtk")
+[node name="PlayerBody" type="CharacterBody3D" parent="." unique_id=591775829 groups=["player_body"] instance=ExtResource("6_ir0w8")]
+process_priority = -100
+process_physics_priority = -100
+collision_layer = 524288
+collision_mask = 1023
+script = ExtResource("7_w1na8")

@@ -28,7 +28,7 @@ public partial class Root : Node3D
 
 			// Change our main viewport to output to the HMD
 			GetViewport().UseXR = true;
-			_xrInterface.SessionBegun += OnOpenXRSessionBegun;
+			//_xrInterface.SessionBegun += OnOpenXRSessionBegun;
 			_xrInterface.PoseRecentered += OnOpenXRPoseRecentered;
 		}
 		else
@@ -38,7 +38,7 @@ public partial class Root : Node3D
 		}
 	}
 
-	private void OnOpenXRSessionBegun()
+	 private void OnOpenXRSessionBegun()
 	{
 		var currentRefreshRate = _xrInterface.DisplayRefreshRate;
 		GD.Print(currentRefreshRate > 0f);
