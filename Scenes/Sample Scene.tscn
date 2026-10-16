@@ -2,16 +2,26 @@
 
 [ext_resource type="Script" uid="uid://s24kukksvyms" path="res://Scenes/Root.cs" id="1_6noqq"]
 [ext_resource type="PackedScene" uid="uid://bf150rfxmg2q4" path="res://prefab/box.tscn" id="1_r6ugw"]
+[ext_resource type="Texture2D" uid="uid://c0ba06xx52olw" path="res://Valve_1m x 1m.png" id="3_uv3gn"]
 [ext_resource type="PackedScene" uid="uid://byw2olxqohv30" path="res://playerOrigin.tscn" id="3_vjknt"]
+[ext_resource type="Texture2D" uid="uid://bcboj6p4brp28" path="res://Box.png" id="4_srovu"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_prakw"]
+albedo_texture = ExtResource("3_uv3gn")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nnmqo"]
+albedo_texture = ExtResource("4_srovu")
 
 [node name="root" type="Node3D" unique_id=15306160]
 script = ExtResource("1_6noqq")
 
 [node name="Box" parent="." unique_id=816699017 instance=ExtResource("1_r6ugw")]
 transform = Transform3D(12, 0, 0, 0, 1, 0, 0, 0, 12, 0, -0.5, 0)
+material_override = SubResource("StandardMaterial3D_prakw")
 
 [node name="Box2" parent="." unique_id=1184131957 instance=ExtResource("1_r6ugw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.7324152, 0.5960008, 1.5776782)
+material_override = SubResource("StandardMaterial3D_nnmqo")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=855986746]
 transform = Transform3D(1, 0, 0, 0, 0.15221108, 0.988348, 0, -0.988348, 0.15221108, 0, 3, 0)
